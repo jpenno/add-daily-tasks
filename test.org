@@ -1,0 +1,84 @@
+* To Do List
+** future tasks
+*** TODO go to mums
+SCHEDULED: <2021-11-04 Thu 10:00>
+*** TODO feet
+** 1/11/21
+*** TODO make a plan for what i want to do and how to start
+SCHEDULED: <2021-11-01 Mon 15:00>
+*** TODO watch this is cs50x week 2
+SCHEDULED: <2021-11-01 Mon 15:00>
+https://cs50.harvard.edu/x/2021/weeks/2/
+** notes
+*** look in to emacs doom cast
+https://www.youtube.com/watch?v=rCMh7srOqvw&list=PLhXZp00uXBk4np17N39WvB80zgxlZfVwj&index=1
+*** do rust cook book
+https://rust-lang-nursery.github.io/rust-cookbook/intro.html
+** old To Do's
+*** 29/10/21
+**** DONE watch this is cs50x week 1
+CLOSED: [2021-10-29 Fri 14:07] SCHEDULED: <2021-10-29 Fri 15:00>
+https://cs50.harvard.edu/x/2021/weeks/1/
+start from 1:22
+*** 28/10/21
+**** DONE watch this is cs50x week 1
+CLOSED: [2021-10-28 Thu 15:12] SCHEDULED: <2021-10-28 Thu 15:00>
+https://cs50.harvard.edu/x/2021/weeks/1/
+got up to 1:22
+**** DONE bike ride 10-15 min
+CLOSED: [2021-10-28 Thu 16:22] SCHEDULED: <2021-10-28 Thu 16:00>
+*** 27/10/21
+**** DONE watch this is cs50x week 0
+SCHEDULED: <2021-10-27 Wed 15:00>
+CLOSED: [2021-10-27 Wed 15:45]
+https://cs50.harvard.edu/x/2021/weeks/0/
+start from 1:08:00
+
+*** 26/10/21
+**** DONE watch this is cs50x week 0
+SCHEDULED: <2021-10-26 Tue 15:00>
+CLOSED: [2021-10-26 Tue 15:06]
+https://cs50.harvard.edu/x/2021/weeks/0/
+got up to 1:08
+**** DONE bike ride 10-15 min
+CLOSED: [2021-10-26 Tue 15:29] SCHEDULED: <2021-10-26 Tue 16:00>
+
+ * TODO wanikani
+** Every Day
+*** TODO wanikani
+SCHEDULED: <2021-10-30 Sat 12:00  +1d>
+:PROPERTIES:
+:LAST_REPEAT: [2021-10-29 Fri 11:34]
+:END:
+- State "DONE"       from "TODO"       [2021-10-29 Fri 11:34]
+- State "DONE"       from "TODO"       [2021-10-28 Thu 10:36]
+- State "DONE"       from "TODO"       [2021-10-27 Wed 10:13]
+- State "DONE"       from "TODO"       [2021-10-26 Tue 10:46]
+*** TODO typing prac
+SCHEDULED: <2021-10-30 Sat 12:00  +1d>
+:PROPERTIES:
+:LAST_REPEAT: [2021-10-29 Fri 11:58]
+:END:
+- State "DONE"       from "TODO"       [2021-10-29 Fri 11:58]
+- State "DONE"       from "TODO"       [2021-10-28 Thu 11:52]
+- State "DONE"       from "TODO"       [2021-10-27 Wed 10:40]
+- State "DONE"       from "TODO"       [2021-10-26 Tue 11:01]
+- State "DONE"       from "TODO"       [2021-10-25 Mon 15:15]
+*** TODO plank 30s
+SCHEDULED: <2021-10-29 Fri 12:00  +1d>
+:PROPERTIES:
+:LAST_REPEAT: [2021-10-28 Thu 13:06]
+:END:
+- State "DONE"       from "TODO"       [2021-10-28 Thu 13:06]
+- State "DONE"       from "TODO"       [2021-10-27 Wed 11:55]
+- State "DONE"       from "TODO"       [2021-10-26 Tue 12:19]
+- State "DONE"       from "TODO"       [2021-10-25 Mon 15:04]
+*** TODO brush teath
+SCHEDULED: <2021-10-25 Mon 23:00  +1d>
+*** TODO read
+SCHEDULED: <2021-10-25 Mon 23:00  +1d>
+*** TODO smiling mind
+SCHEDULED: <2021-10-25 Mon 23:00  +1d>
+
+
+
