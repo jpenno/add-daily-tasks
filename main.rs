@@ -3,6 +3,8 @@ use std::fs;
 use std::fs::File;
 use std::io::{Error, Write};
 
+// TODO make it so the tasks dont get added more then once
+
 fn main() -> Result<(), Error> {
     // set file name
     let in_file = "tasks.org";
@@ -21,16 +23,24 @@ fn main() -> Result<(), Error> {
 
     // find wher to add the tasks
     let index = contents.find("** Every Day");
-    println!("{:?}", index);
+    let mut off_set: usize = 0;
 
-    for i in 0..13 {
-        let b: u8 = contents.as_bytes()[1441 + i];
-        let c: char = b as char; // if you need to get the character as a unicode code point
+    //  find end of the line
+    for i in 0..contents.len() {
+        // get the character out of the string
+        let b: u8 = contents.as_bytes()[index.unwrap() + i];
+        let c: char = b as char;
+        // chech if the charcter is a new line character
+        if c == '\n' {
+            // add one to go after the new line
+            off_set = i + 1;
+            break;
+        }
         println!("{:?}", c);
     }
 
     // insert the tarsks in to the string
-    contents.insert_str(1441 + 13, &tasks_to_add);
+    contents.insert_str(index.unwrap() + off_set, &tasks_to_add);
 
     // write to file
     let mut out_fh = File::create(out_file)?;
