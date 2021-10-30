@@ -1,28 +1,28 @@
 // use std::env;
 use std::fs;
 use std::fs::File;
-use std::io::{Error, Write};
+use std::io::Write;
 
 mod date;
 use crate::date::Date;
 
 // TODO make it so the tasks dont get added more then once
-fn main() -> Result<(), Error> {
+fn main() {
     // testing date
     let date = Date::new();
     date.print();
 
-    // set file name
-    let in_file = "tasks.org";
-    let out_file = "test.org";
+    // set file paths
+    let in_file = "./res/tasks.org";
+    let out_file = "./res/test.org";
+
+    // get the tasks to add to the file
+    let tasks_to_add = fs::read_to_string(&in_file).expect("Error reading in file");
 
     // get the contents out of the file
-    let tasks_to_add = fs::read_to_string(in_file).expect("Something went wrong reading the file");
+    let mut contents = fs::read_to_string(&out_file).expect("Error reading out file");
 
-    // get the contents out of the file
-    let mut contents = fs::read_to_string(out_file).expect("Something went wrong reading the file");
-
-    // find wher to add the tasks
+    // find where to add the tasks
     let index = contents.find("** Every Day");
     let mut off_set: usize = 0;
 
@@ -43,8 +43,6 @@ fn main() -> Result<(), Error> {
     contents.insert_str(index.unwrap() + off_set, &tasks_to_add);
 
     // write to file
-    let mut out_fh = File::create(out_file)?;
-    write!(out_fh, "{}\n", contents)?;
-
-    Ok(())
+    let mut out_fh = File::create(&out_file).expect("Error making file to save out put");
+    write!(out_fh, "{}\n", contents).expect("Error writing file");
 }

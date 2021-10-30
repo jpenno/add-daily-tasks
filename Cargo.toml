@@ -11,4 +11,4 @@ chrono = "0.4"
 
 [[bin]]
 name = "add-daily-tasks"
-path = "main.rs"
+path = "src/main.rs"
