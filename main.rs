@@ -3,55 +3,14 @@ use std::fs;
 use std::fs::File;
 use std::io::{Error, Write};
 
-use chrono;
-use chrono::{DateTime, Local};
-
-struct Date {
-    day_name: String,
-    day: String,
-    month: String,
-    year: String,
-    full_date: String,
-}
-
-impl Date {
-    pub fn new(date: DateTime<Local>) -> Date {
-        let mut tmp = Date {
-            day_name: date.format("%a").to_string(),
-            day: date.format("%-d").to_string(),
-            month: date.format("%m").to_string(),
-            year: date.format("%y").to_string(),
-            full_date: "".to_string(),
-        };
-        // set string with full date
-        tmp.full_date.push_str(tmp.day.as_str());
-        tmp.full_date.push_str("/");
-        tmp.full_date.push_str(tmp.month.as_str());
-        tmp.full_date.push_str("/");
-        tmp.full_date.push_str(tmp.year.as_str());
-        return tmp;
-    }
-
-    pub fn print(&self) {
-        println!("day name: {}", self.day_name);
-        println!("day: {}", self.day);
-        println!("month: {}", self.month);
-        println!("year: {}", self.year);
-        println!("full date: {}", self.full_date);
-    }
-}
-
-fn chrono_testing() {
-    // get local time and date
-    let local: DateTime<Local> = Local::now(); // e.g. `2014-11-28T21:45:59.324310806+09:00`
-    println!("local: {}", local.format("%a %b %-d, %-I:%M").to_string());
-    let date = Date::new(local);
-    date.print();
-}
+mod date;
+use crate::date::Date;
 
 // TODO make it so the tasks dont get added more then once
 fn main() -> Result<(), Error> {
-    chrono_testing();
+    // testing date
+    let date = Date::new();
+    date.print();
 
     // set file name
     let in_file = "tasks.org";
