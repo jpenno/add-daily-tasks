@@ -1,12 +1,8 @@
-// use std::env;
-
-// mod date;
-// use crate::date::Date;
-
+mod date;
 mod file_io;
+
 use crate::file_io::FileIO;
 
-// TODO make it so the tasks dont get added more then once
 fn main() {
     // set file paths
     let in_file = "./res/tasks.org";

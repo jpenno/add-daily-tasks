@@ -4,9 +4,16 @@
 SCHEDULED: <2021-11-04 Thu 10:00>
 *** TODO feet
 ** Every Day
+*** 31/10/21
+**** TODO wanikani
+**** TODO typing prac
+**** TODO plank 30s
+**** TODO brush teath
+**** TODO read
+**** TODO smiling mind
 ** 1/11/21
 *** TODO make a plan for what i want to do and how to start
-SCHEDULED: <2021-11-01 Mon 15:00>
+  SCHEDULED: <2021-11-01 Mon 15:00>
 *** TODO watch this is cs50x week 2
 SCHEDULED: <2021-11-01 Mon 15:00>
 https://cs50.harvard.edu/x/2021/weeks/2/
@@ -34,7 +41,6 @@ SCHEDULED: <2021-10-27 Wed 15:00>
 CLOSED: [2021-10-27 Wed 15:45]
 https://cs50.harvard.edu/x/2021/weeks/0/
 start from 1:08:00
-
 *** 26/10/21
 **** DONE watch this is cs50x week 0
 SCHEDULED: <2021-10-26 Tue 15:00>
@@ -43,19 +49,4 @@ https://cs50.harvard.edu/x/2021/weeks/0/
 got up to 1:08
 **** DONE bike ride 10-15 min
 CLOSED: [2021-10-26 Tue 15:29] SCHEDULED: <2021-10-26 Tue 16:00>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

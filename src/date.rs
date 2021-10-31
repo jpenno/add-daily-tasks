@@ -10,6 +10,9 @@ pub struct Date {
 }
 
 impl Date {
+    pub fn get_full_date(&self) -> &String {
+        &self.full_date
+    }
     // set the date to the current date and time
     pub fn new() -> Date {
         // get the current date and time
