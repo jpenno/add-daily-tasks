@@ -4,19 +4,19 @@
 SCHEDULED: <2021-11-04 Thu 10:00>
 *** TODO feet
 ** Every Day
-*** 31/10/21
+*** 1/11/21
 **** TODO wanikani
+this is some test data
+this is some test data
+this is some test data
 **** TODO typing prac
 **** TODO plank 30s
+this is some test data
 **** TODO brush teath
 **** TODO read
+this is some test data
 **** TODO smiling mind
-** 1/11/21
-*** TODO make a plan for what i want to do and how to start
-  SCHEDULED: <2021-11-01 Mon 15:00>
-*** TODO watch this is cs50x week 2
-SCHEDULED: <2021-11-01 Mon 15:00>
-https://cs50.harvard.edu/x/2021/weeks/2/
+this is some test data
 ** notes
 *** look in to emacs doom cast
 https://www.youtube.com/watch?v=rCMh7srOqvw&list=PLhXZp00uXBk4np17N39WvB80zgxlZfVwj&index=1
