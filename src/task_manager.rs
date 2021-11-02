@@ -3,7 +3,6 @@ use crate::date::Date;
 
 pub struct TaskManager {
     tasks: Vec<Task>,
-    formated_tasks: String,
 }
 
 impl TaskManager {
@@ -39,30 +38,26 @@ impl TaskManager {
         // tmp retur of nothing for testing
         return TaskManager {
             tasks,
-            formated_tasks: "test".to_string(),
         };
     }
 
-    pub fn format_tasks(&mut self) {
+    pub fn formated_tasks(&self) -> String{
+        let mut formated_tasks :String = String::new();
         // add date to the top of tasks output
         let date = Date::new();
-        self.formated_tasks.push_str("*** ");
-        self.formated_tasks.push_str(&date.get_full_date());
-        self.formated_tasks.push('\n');
+        formated_tasks.push_str("*** ");
+        formated_tasks.push_str(&date.get_full_date());
+        formated_tasks.push('\n');
 
         // loop through tasks and add them to a string
         for task in &self.tasks {
-            self.formated_tasks.push_str(&task.task());
-            self.formated_tasks.push('\n');
+            formated_tasks.push_str(&task.task());
+            formated_tasks.push('\n');
             for data in task.data() {
-                self.formated_tasks.push_str(&data);
-                self.formated_tasks.push('\n');
+                formated_tasks.push_str(&data);
+                formated_tasks.push('\n');
             }
         }
-    }
-
-    /// Get a reference to the task manager's formated tasks.
-    pub fn formated_tasks(&self) -> &str {
-        self.formated_tasks.as_ref()
+        return formated_tasks;
     }
 }
