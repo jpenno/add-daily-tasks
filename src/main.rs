@@ -1,5 +1,6 @@
 mod date;
 mod file_io;
+mod task;
 
 use crate::file_io::FileIO;
 

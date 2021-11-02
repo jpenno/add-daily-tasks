@@ -3,6 +3,7 @@ use std::fs::File;
 use std::io::Write;
 
 use crate::date::Date;
+use crate::task::Task;
 
 pub struct FileIO {
     in_file: String,
@@ -13,16 +14,6 @@ pub struct FileIO {
     tasks: Vec<Task>,
 }
 
-struct Task {
-    task: String,
-    data: Vec<String>,
-}
-impl Task {
-    pub fn _print(&self) {
-        println!("Task: {}", self.task);
-        println!("Data: {:?}\n", self.data);
-    }
-}
 impl FileIO {
     // set the in and out file
     pub fn new(in_file: String, out_file: String) -> FileIO {
@@ -78,10 +69,8 @@ impl FileIO {
                 data.push(in_splits.pop().unwrap().to_string());
             }
             // build task
-            self.tasks.push(Task {
-                task: task,
-                data: data,
-            });
+
+            self.tasks.push(Task::new(task, data));
         }
     }
 
@@ -94,9 +83,9 @@ impl FileIO {
 
         // loop through tasks and add them to a string
         for task in &self.tasks {
-            self.formated_tasks.push_str(&task.task);
+            self.formated_tasks.push_str(&task.task());
             self.formated_tasks.push('\n');
-            for data in &task.data {
+            for data in task.data() {
                 self.formated_tasks.push_str(&data);
                 self.formated_tasks.push('\n');
             }
