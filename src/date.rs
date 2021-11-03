@@ -11,9 +11,6 @@ pub struct Date {
 }
 
 impl Date {
-    pub fn get_full_date(&self) -> &String {
-        &self.full_date
-    }
     // set the date to the current date and time
     pub fn new() -> Date {
         // get the current date and time
@@ -33,6 +30,26 @@ impl Date {
         tmp.full_date.push_str("/");
         tmp.full_date.push_str(tmp.year.as_str());
         return tmp;
+    }
+    pub fn new_set(day_name: String, day: String, month: String, year: String) -> Date {
+        let mut tmp = Date {
+            day_name,
+            day,
+            month,
+            year,
+            full_date: "".to_string(),
+        };
+        // set string with full date
+        tmp.full_date.push_str(tmp.day.as_str());
+        tmp.full_date.push_str("/");
+        tmp.full_date.push_str(tmp.month.as_str());
+        tmp.full_date.push_str("/");
+        tmp.full_date.push_str(tmp.year.as_str());
+        return tmp;
+    }
+
+    pub fn get_full_date(&self) -> &String {
+        &self.full_date
     }
 
     pub fn print(&self) {

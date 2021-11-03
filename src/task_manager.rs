@@ -41,12 +41,10 @@ impl TaskManager {
         };
     }
 
-    pub fn formated_tasks(&self) -> String{
+    pub fn formated_tasks(&self, date: &Date) -> String{
         let mut formated_tasks :String = String::new();
-        // add date to the top of tasks output
-        let date = Date::new();
         formated_tasks.push_str("*** ");
-        formated_tasks.push_str(&date.get_full_date());
+        formated_tasks.push_str(date.get_full_date());
         formated_tasks.push('\n');
 
         // loop through tasks and add them to a string
