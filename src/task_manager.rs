@@ -1,12 +1,14 @@
-use crate::task::Task;
 use crate::date::Date;
+use crate::task::Task;
 
-pub struct TaskManager {
-    tasks: Vec<Task>,
+pub struct TaskManager<'a> {
+    tasks: Vec<Task<'a>>,
+    date: &'a Date,
 }
 
-impl TaskManager {
-    pub fn new(task_file: String) -> Self {
+// impl TaskManager {
+impl<'a> TaskManager<'a> {
+    pub fn new(task_file: String, date: &'a Date) -> Self {
         // split the tarsks on new line
         let mut task_file_lines: Vec<&str> = task_file.split('\n').collect();
         // revers the split to pot from the frount of the file
@@ -32,19 +34,17 @@ impl TaskManager {
             }
             // build task
 
-            tasks.push(Task::new(task, data));
+            tasks.push(Task::new(task, data, date));
         }
 
         // tmp retur of nothing for testing
-        return TaskManager {
-            tasks,
-        };
+        return TaskManager { tasks, date };
     }
 
-    pub fn formated_tasks(&self, date: &Date) -> String{
-        let mut formated_tasks :String = String::new();
+    pub fn formated_tasks(&self) -> String {
+        let mut formated_tasks: String = String::new();
         formated_tasks.push_str("*** ");
-        formated_tasks.push_str(date.get_full_date());
+        formated_tasks.push_str(self.date.get_full_date());
         formated_tasks.push('\n');
 
         // loop through tasks and add them to a string
@@ -57,5 +57,19 @@ impl TaskManager {
             }
         }
         return formated_tasks;
+    }
+
+    pub fn process(&mut self) {
+        for task in &mut self.tasks {
+            task.process();
+        }
+    }
+
+    pub fn check_if_there(&self, agenda_file_content: String) -> bool {
+        // check if the tasks have are there already
+        if agenda_file_content.contains(self.date.get_full_date()) == true {
+            return true;
+        }
+        return false;
     }
 }

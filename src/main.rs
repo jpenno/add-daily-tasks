@@ -10,14 +10,20 @@ use task_manager::TaskManager;
 use crate::file_io::FileIO;
 
 fn main() {
+    let date = Date::new();
     // set file paths
     let in_file = "./res/tasks.org";
     let out_file = "./res/agenda.org";
     let match_str = "** Every Day".to_string();
-    let date = Date::new();
 
     let mut fiel_io = FileIO::new(in_file.to_string(), out_file.to_string());
-    let task_manager: TaskManager = TaskManager::new(fiel_io.in_file_content());
-    fiel_io.insert_at_point(match_str, task_manager.formated_tasks(&date).as_str(), &date);
+    let mut task_manager: TaskManager = TaskManager::new(fiel_io.in_file_content(), &date);
+
+    task_manager.process();
+
+    if task_manager.check_if_there(fiel_io.agenda_file_content().to_string()) == false {
+        fiel_io.insert_at_point(match_str, task_manager.formated_tasks().as_str());
+    }
+
     fiel_io.save_to_file();
 }

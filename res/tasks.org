@@ -1,9 +1,11 @@
 **** TODO wanikani
+!<mon-fri:10:00>
+SCHEDULED: <10:00>
 this is some test data
 this is some test data
-this is some test data
-**** TODO typing prac
 **** TODO plank 30s
+S this is some test data>
+**** TODO typing prac
 this is some test data
 **** TODO brush teath
 **** TODO read

@@ -4,15 +4,13 @@
 SCHEDULED: <2021-11-04 Thu 10:00>
 *** TODO feet
 ** Every Day
-*** 5/11/21
+*** 3/11/21
 **** TODO wanikani
-!<mon-fri:10:00>
-SCHEDULED: <5/11/21 10:00>
 this is some test data
 this is some test data
-**** TODO plank 30s
-S this is some test data>
+this is some test data
 **** TODO typing prac
+**** TODO plank 30s
 this is some test data
 **** TODO brush teath
 **** TODO read
