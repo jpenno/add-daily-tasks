@@ -3,7 +3,6 @@ mod file_io {
     use crate::{date::Date, file_io::FileIO, task_manager::TaskManager};
     use std::fs;
     struct Data {
-        file_path: String,
         tasks_file: String,
         agenda_file: String,
         match_str: String,
@@ -15,16 +14,15 @@ mod file_io {
         let file_path = "./test_files/add_tasks_to_file".to_string();
         sim_save(
             Data {
-                file_path: "./test_files/add_tasks_to_file".to_string(),
                 tasks_file: "./test_files/shared/tasks.org".to_string(),
                 agenda_file: file_path.to_string() + "/agenda_in.org",
                 match_str: "** Every Day".to_string(),
             },
-            &Date::new_set(
+            &Date::_new_set(
                 "wed".to_string(),
                 "3".to_string(),
                 "11".to_string(),
-                "21".to_string(),
+                "2021".to_string(),
             ),
         );
     }
@@ -35,22 +33,21 @@ mod file_io {
         let file_path = "./test_files/check_if_tasks_are_there".to_string();
         sim_save(
             Data {
-                file_path: "./test_files/check_if_tasks_are_there".to_string(),
                 tasks_file: "./test_files/shared/tasks.org".to_string(),
                 agenda_file: file_path.to_string() + "/agenda_in.org",
                 match_str: "** Every Day".to_string(),
             },
-            &Date::new_set(
+            &Date::_new_set(
                 "wed".to_string(),
                 "3".to_string(),
                 "11".to_string(),
-                "21".to_string(),
+                "2021".to_string(),
             ),
         );
     }
 
     fn sim_save(data: Data, date: &Date) {
-        let epcted = fs::read_to_string(data.file_path.to_string() + "/agenda_out.org")
+        let epcted = fs::read_to_string( "./test_files/shared/agenda_out.org")
             .expect("Error reading out file");
 
         let mut fiel_io = FileIO::new(data.tasks_file.to_string(), data.agenda_file.to_string());

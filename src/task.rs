@@ -48,7 +48,7 @@ impl<'a> Task<'a> {
                 if insert_date {
                     println!("TASK: {}", &self.task);
                     println!("SCHEDULED: {}", data);
-                    let mut date_str = self.date.get_full_date().to_owned();
+                    let mut date_str = self.date.get_date_ymd().to_owned();
                     date_str.push_str(" ");
                     data.insert_str(MATCHES.scheduled_idx,&date_str);
                     println!("SCHEDULED: {}", data);

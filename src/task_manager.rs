@@ -44,7 +44,7 @@ impl<'a> TaskManager<'a> {
     pub fn formated_tasks(&self) -> String {
         let mut formated_tasks: String = String::new();
         formated_tasks.push_str("*** ");
-        formated_tasks.push_str(self.date.get_full_date());
+        formated_tasks.push_str(&self.date.get_date_dmy());
         formated_tasks.push('\n');
 
         // loop through tasks and add them to a string
@@ -67,7 +67,7 @@ impl<'a> TaskManager<'a> {
 
     pub fn check_if_there(&self, agenda_file_content: String) -> bool {
         // check if the tasks have are there already
-        if agenda_file_content.contains(self.date.get_full_date()) == true {
+        if agenda_file_content.contains(&self.date.get_date_dmy()) == true {
             return true;
         }
         return false;

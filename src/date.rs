@@ -1,13 +1,10 @@
-#![allow(dead_code)]
-use chrono;
-use chrono::Local;
+use chrono::{self, Datelike, Local};
 
 pub struct Date {
     day_name: String,
     day: String,
     month: String,
     year: String,
-    full_date: String,
 }
 
 impl Date {
@@ -15,48 +12,55 @@ impl Date {
     pub fn new() -> Date {
         // get the current date and time
         let date = Local::now();
-        // set date
-        let mut tmp = Date {
+        Date {
             day_name: date.format("%a").to_string(),
-            day: date.format("%-d").to_string(),
-            month: date.format("%m").to_string(),
-            year: date.format("%y").to_string(),
-            full_date: "".to_string(),
-        };
-        // set string with full date
-        tmp.full_date.push_str(tmp.day.as_str());
-        tmp.full_date.push_str("/");
-        tmp.full_date.push_str(tmp.month.as_str());
-        tmp.full_date.push_str("/");
-        tmp.full_date.push_str(tmp.year.as_str());
-        return tmp;
+            day: date.day().to_string(),
+            month: date.month().to_string(),
+            year: date.year().to_string(),
+        }
     }
-    pub fn new_set(day_name: String, day: String, month: String, year: String) -> Date {
-        let mut tmp = Date {
+
+    pub fn _new_set(day_name: String, day: String, month: String, year: String) -> Date {
+        Date {
             day_name,
             day,
             month,
             year,
-            full_date: "".to_string(),
-        };
+        }
+    }
+
+    // get the date Year Month Day
+    pub fn get_date_ymd(&self) -> String {
+        let mut tmp: String = "".to_string();
         // set string with full date
-        tmp.full_date.push_str(tmp.day.as_str());
-        tmp.full_date.push_str("/");
-        tmp.full_date.push_str(tmp.month.as_str());
-        tmp.full_date.push_str("/");
-        tmp.full_date.push_str(tmp.year.as_str());
+        tmp.push_str(&self.year);
+        tmp.push_str("-");
+        tmp.push_str(&self.month);
+        tmp.push_str("-");
+        tmp.push_str(&self.day);
+        tmp.push_str(" ");
+        tmp.push_str(&self.day_name.as_str());
         return tmp;
     }
 
-    pub fn get_full_date(&self) -> &String {
-        &self.full_date
+    // get the date Day Month Year
+    pub fn get_date_dmy(&self) -> String {
+        let mut tmp: String = "".to_string();
+        // set string with full date
+        tmp.push_str(&self.day);
+        tmp.push_str("/");
+        tmp.push_str(&self.month);
+        tmp.push_str("/");
+        tmp.push_str(&self.year);
+        return tmp;
     }
 
-    pub fn print(&self) {
+    pub fn _print(&self) {
         println!("day name: {}", self.day_name);
         println!("day: {}", self.day);
         println!("month: {}", self.month);
         println!("year: {}", self.year);
-        println!("full date: {}", self.full_date);
+        println!("Date DMY: {}", self.get_date_dmy());
+        println!("Date YMD: {}", self.get_date_ymd());
     }
 }
