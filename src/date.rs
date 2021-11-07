@@ -63,4 +63,9 @@ impl Date {
         println!("Date DMY: {}", self.get_date_dmy());
         println!("Date YMD: {}", self.get_date_ymd());
     }
+
+    /// Get a reference to the date's day name.
+    pub fn day_name(&self) -> &str {
+        self.day_name.as_ref()
+    }
 }

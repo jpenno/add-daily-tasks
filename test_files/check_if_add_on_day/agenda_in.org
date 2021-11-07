@@ -4,10 +4,6 @@
 SCHEDULED: <2021-11-04 Thu 10:00>
 *** TODO feet
 ** Every Day
-*** 7/11/2021
-**** TODO smiling mind
-SCHEDULED: <2021-11-7 Sun 10:00>
-this is some test data
 ** notes
 *** look in to emacs doom cast
 https://www.youtube.com/watch?v=rCMh7srOqvw&list=PLhXZp00uXBk4np17N39WvB80zgxlZfVwj&index=1

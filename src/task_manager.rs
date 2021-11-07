@@ -49,11 +49,13 @@ impl<'a> TaskManager<'a> {
 
         // loop through tasks and add them to a string
         for task in &self.tasks {
-            formated_tasks.push_str(&task.task());
-            formated_tasks.push('\n');
-            for data in task.data() {
-                formated_tasks.push_str(&data);
+            if task.add() {
+                formated_tasks.push_str(&task.task());
                 formated_tasks.push('\n');
+                for data in task.data() {
+                    formated_tasks.push_str(&data);
+                    formated_tasks.push('\n');
+                }
             }
         }
         return formated_tasks;
