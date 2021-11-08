@@ -1,4 +1,5 @@
 use chrono::{self, Datelike, Local};
+use std::collections::HashMap;
 
 pub struct Date {
     day_name: String,
@@ -37,7 +38,13 @@ impl Date {
         tmp.push_str("-");
         tmp.push_str(&self.month);
         tmp.push_str("-");
-        tmp.push_str(&self.day);
+        let mut day_tmp: String = String::new();
+        // day_tmp.insert_str(0, "0");
+        if self.day.len() < 2 {
+            day_tmp.push_str("0");
+        }
+        day_tmp.push_str(&self.day);
+        tmp.push_str(&day_tmp);
         tmp.push_str(" ");
         tmp.push_str(&self.day_name.as_str());
         return tmp;
@@ -67,5 +74,23 @@ impl Date {
     /// Get a reference to the date's day name.
     pub fn day_name(&self) -> &str {
         self.day_name.as_ref()
+    }
+
+    pub fn in_range(&self, firts_day: &str, second_day: &str) -> bool {
+        let mut days = HashMap::new();
+        days.insert(String::from("Mon"), 0);
+        days.insert(String::from("Tue"), 1);
+        days.insert(String::from("Wed"), 2);
+        days.insert(String::from("Thr"), 3);
+        days.insert(String::from("Fri"), 4);
+        days.insert(String::from("Sat"), 5);
+        days.insert(String::from("Sun"), 6);
+
+        if days.get(&self.day_name) <= days.get(second_day)
+            && days.get(&self.day_name) >= days.get(firts_day)
+        {
+            return true;
+        }
+        return false;
     }
 }

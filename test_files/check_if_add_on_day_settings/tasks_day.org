@@ -1,5 +1,5 @@
 **** TODO wanikani
-SCHEDULED: <Wed-Fri 10:00>
+SCHEDULED: <Sat 10:00>
 this is some test data
 this is some test data
 **** TODO plank 30s
@@ -9,7 +9,7 @@ this is some test data>
 SCHEDULED: <Tue 10:00>
 this is some test data
 **** TODO brush teath
-SCHEDULED: <Mon, Tue, Fri,| 10:00>
+SCHEDULED: <Mon, Tue,| 10:00>
 **** TODO read
 SCHEDULED: <Fri 10:00>
 this is some test data
