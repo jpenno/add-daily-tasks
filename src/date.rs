@@ -35,19 +35,19 @@ impl Date {
         let mut tmp: String = "".to_string();
         // set string with full date
         tmp.push_str(&self.year);
-        tmp.push_str("-");
+        tmp.push('-');
         tmp.push_str(&self.month);
-        tmp.push_str("-");
+        tmp.push('-');
         let mut day_tmp: String = String::new();
         // day_tmp.insert_str(0, "0");
         if self.day.len() < 2 {
-            day_tmp.push_str("0");
+            day_tmp.push('0');
         }
         day_tmp.push_str(&self.day);
         tmp.push_str(&day_tmp);
-        tmp.push_str(" ");
-        tmp.push_str(&self.day_name.as_str());
-        return tmp;
+        tmp.push(' ');
+        tmp.push_str(self.day_name.as_str());
+        tmp
     }
 
     // get the date Day Month Year
@@ -55,11 +55,11 @@ impl Date {
         let mut tmp: String = "".to_string();
         // set string with full date
         tmp.push_str(&self.day);
-        tmp.push_str("/");
+        tmp.push('/');
         tmp.push_str(&self.month);
-        tmp.push_str("/");
+        tmp.push('/');
         tmp.push_str(&self.year);
-        return tmp;
+        tmp
     }
 
     pub fn _print(&self) {
@@ -81,7 +81,7 @@ impl Date {
         days.insert(String::from("Mon"), 0);
         days.insert(String::from("Tue"), 1);
         days.insert(String::from("Wed"), 2);
-        days.insert(String::from("Thr"), 3);
+        days.insert(String::from("Thu"), 3);
         days.insert(String::from("Fri"), 4);
         days.insert(String::from("Sat"), 5);
         days.insert(String::from("Sun"), 6);
@@ -91,6 +91,6 @@ impl Date {
         {
             return true;
         }
-        return false;
+        false
     }
 }

@@ -34,7 +34,7 @@ impl FileIO {
 
         // insert the tarsks in to the string
         self.agenda_file_content.insert_str(index.unwrap(), tasks);
-        return self.agenda_file_content.as_ref();
+        self.agenda_file_content.as_ref()
     }
 
     pub fn save_to_file(&self) {

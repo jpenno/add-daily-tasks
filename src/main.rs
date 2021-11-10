@@ -21,7 +21,7 @@ fn main() {
 
     task_manager.process();
 
-    if task_manager.check_if_there(fiel_io.agenda_file_content().to_string()) == false {
+    if !task_manager.check_if_there(fiel_io.agenda_file_content().to_string()) {
         fiel_io.insert_at_point(match_str, task_manager.formated_tasks().as_str());
     }
 

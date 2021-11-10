@@ -22,12 +22,11 @@ impl<'a> TaskManager<'a> {
             let task = task_file_lines.pop().unwrap().to_string();
             let mut data: Vec<String> = Vec::new();
             // get all the lines under the task
-            while task_file_lines
+            while !task_file_lines
                 .last()
                 .unwrap()
                 .to_string()
                 .contains(&'*'.to_string())
-                == false
                 && task_file_lines.len() > 1
             {
                 data.push(task_file_lines.pop().unwrap().to_string());
@@ -38,7 +37,7 @@ impl<'a> TaskManager<'a> {
         }
 
         // tmp retur of nothing for testing
-        return TaskManager { tasks, date };
+        TaskManager { tasks, date }
     }
 
     pub fn formated_tasks(&self) -> String {
@@ -50,15 +49,15 @@ impl<'a> TaskManager<'a> {
         // loop through tasks and add them to a string
         for task in &self.tasks {
             if task.add() {
-                formated_tasks.push_str(&task.task());
+                formated_tasks.push_str(task.task());
                 formated_tasks.push('\n');
                 for data in task.data() {
-                    formated_tasks.push_str(&data);
+                    formated_tasks.push_str(data);
                     formated_tasks.push('\n');
                 }
             }
         }
-        return formated_tasks;
+        formated_tasks
     }
 
     pub fn process(&mut self) {
@@ -69,9 +68,9 @@ impl<'a> TaskManager<'a> {
 
     pub fn check_if_there(&self, agenda_file_content: String) -> bool {
         // check if the tasks have are there already
-        if agenda_file_content.contains(&self.date.get_date_dmy()) == true {
+        if agenda_file_content.contains(&self.date.get_date_dmy()) {
             return true;
         }
-        return false;
+        false
     }
 }
