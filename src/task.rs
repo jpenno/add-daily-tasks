@@ -117,12 +117,15 @@ impl<'a> Task<'a> {
         loop {
             let day_in_list = &data.as_bytes()[start..end];
             // check if there are more days in the list
-            if data.as_bytes()[end] as char != ',' {
-                return false;
-            } else {
-                start += off_set;
-                end += off_set;
-                if end >= data.len() {
+            match data.as_bytes()[end] as char {
+                ',' => {
+                    start += off_set;
+                    end += off_set;
+                    if end >= data.len() {
+                        return false;
+                    }
+                }
+                _ => {
                     return false;
                 }
             }

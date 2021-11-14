@@ -12,12 +12,12 @@ mod file_io {
     // test if the tasks are added to the agenda file
     #[test]
     fn add_tasks_to_file() {
-        let file_path = "./test_files/add_tasks_to_file".to_string();
-        let epcted = fs::read_to_string("./test_files/shared/agenda_out.org")
+        let file_path = "./test/add_tasks_to_file".to_string();
+        let epcted = fs::read_to_string("./test/shared/agenda_out.org")
             .expect("Error reading out file");
         let out = sim_save(
             Data {
-                tasks_file: "./test_files/shared/tasks.org".to_string(),
+                tasks_file: "./test/shared/tasks.org".to_string(),
                 agenda_file: file_path.to_string() + "/agenda_in.org",
                 match_str: "** Every Day".to_string(),
             },
@@ -35,12 +35,12 @@ mod file_io {
     // more than once
     #[test]
     fn check_if_tasks_are_there() {
-        let file_path = "./test_files/check_if_tasks_are_there".to_string();
-        let epcted = fs::read_to_string("./test_files/shared/agenda_out.org")
+        let file_path = "./test/check_if_tasks_are_there".to_string();
+        let epcted = fs::read_to_string("./test/shared/agenda_out.org")
             .expect("Error reading out file");
         let out = sim_save(
             Data {
-                tasks_file: "./test_files/shared/tasks.org".to_string(),
+                tasks_file: "./test/shared/tasks.org".to_string(),
                 agenda_file: file_path.to_string() + "/agenda_in.org",
                 match_str: "** Every Day".to_string(),
             },
@@ -57,7 +57,7 @@ mod file_io {
     // check if add on day
     #[test]
     fn check_if_add_on_day() {
-        let file_path = "./test_files/check_if_add_on_day".to_string();
+        let file_path = "./test/check_if_add_on_day".to_string();
         let epcted = fs::read_to_string(file_path.to_owned() + "/agenda_out.org")
             .expect("Error reading out file");
         let out = sim_save(
@@ -79,7 +79,7 @@ mod file_io {
     // check if add on day
     #[test]
     fn check_if_add_on_day_settings() {
-        let file_path = "./test_files/check_if_add_on_day_settings".to_string();
+        let file_path = "./test/check_if_add_on_day_settings".to_string();
         let epcted = fs::read_to_string(file_path.to_owned() + "/agenda_out.org")
             .expect("Error reading out file");
         let out = sim_save(
